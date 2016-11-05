@@ -6,10 +6,7 @@
 
 db.sqlite3
 
-/static
+/.idea
 
-.DS_Store
-
-/myvenv
-
+.idea/workspace.xml
 
