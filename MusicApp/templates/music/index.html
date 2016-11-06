@@ -16,14 +16,22 @@
             <div class="container-fluid">
               <div class="row">
                   {%for album in all_albums %}
-                     <div class="col-lg-2">
+                     <div class="col-lg-2 col-xs-2">
                          <div class="card">
                              <img class="card-img-top img-thumbnail" src="{{album.album_logo}}" alt="Card image cap">
                                 <div class="card-block" style="width: 18rem;">
                                     <h5 class="card-title">
                                    <a href="{% url 'MusicApp:detail' album.id %}" class="card-link">{{album.album_title}}</a><br>
                                     </h5>
-                                    <p>{{album.artist}}</p>
+                                    <p>Artist : {{album.artist}}</p>
+                                    <button type="button" class="btn btn-primary btn-sm">View Details</button> &nbsp
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-secondary btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </div>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-secondary"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                                    </div>
+
                                 </div>
                          </div>
                      </div>

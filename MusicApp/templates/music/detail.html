@@ -3,26 +3,49 @@
 {% block body %}
 
 <div class="container-fluid">
+    &nbsp &nbsp
+    <div class="row">
+         <div class="col-lg-3 col-xs-3">
+             <div class="card">
+             <img class="card-img-top img-fluid" src="{{album.album_logo}}" alt="Card image cap">
+             <div class="card-block">
+                 <h3> {{album.album_title}}</h3> <p > {{album.genre}}</p>
+                 <h5>  Artist : {{album.artist}}</h5>
+             </div>
+             </div>
+         </div>
+         <div class="col-lg-9 col-xs-9">
+             <ul class="nav nav-pills">
+                 <li class="nav-item">
+                     <a class="nav-link active" href="#">View All</a>
+                  </li>
+                <li class="nav-item">
+                     <a class="nav-link" href="#">Add New Song</a>
+                 </li>
 
-    <img src="{{album.album_logo}}" height="200px" width="200px">
-<h1> {{album.album_title}}</h1>
-<h3> {{album.artist}}</h3>
+             </ul>
+             <br>
 
-{% if error_message %}
-         <p><strong>{{error_message}}</strong></p>
-{% endif %}
-    {% csrf_token %}
-    {% for song in album.song_set.all %}
-        {{ song.song_title }}
-        {% if song.is_favorite %}
-        <img src="http://i.imgur.com/b9b13Rd.png"/>
-        {% endif %}
-        <br>
-    {% endfor %}
+              <div class="card">
+                     <div class="card-header">
+                              <h2>All Songs</h2>
+                      </div>
+                    <div class="card-block">
+                        <table class="table">
+                             <thead>
+                                <tr>
+                                  <th>Title</th>
+                                  <th>Audio File</th>
+                                  <th>Favorite</th>
+                                  <th>Actions</th>
+                                </tr>
+                            </thead>
 
-
-</form>
-
+                        </table>
+                    </div>
+             </div>
+         </div>
+    </div>
 </div>
 
 
